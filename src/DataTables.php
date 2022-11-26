@@ -32,12 +32,11 @@ class DataTables
     /**
      * The class constuctor
      * @param $queryBuilder
-     * @param string|int $ciVersion The codeIgniter version to use
      */
-    public function __construct($queryBuilder, $ciVersion = '4')
+    public function __construct($queryBuilder)
     {
-        $this->ciVersion = $ciVersion;
-        $this->config = new Config($ciVersion);
+        $this->ciVersion = '3';
+        $this->config = new Config($this->ciVersion);
         $this->request = Request::createFromGlobals();
         $this->queryBuilder = $queryBuilder;
 

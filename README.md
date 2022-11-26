@@ -1,6 +1,6 @@
 # CodeIgniter DataTables
 
-DataTables server-side for CodeIgniter, supported for both CodeIgniter 3 and CodeIgniter 4.
+DataTables server-side for CodeIgniter 3.
 
 **Note:** This library only handle the server-side part, you still needs to configure the client side like jQuery, DataTables library and including the styles. Don't worry, we already give the examples below.
 
@@ -13,7 +13,7 @@ If you are using CodeIgniter, let's go! You don't needs any extra requirements.
 You just need to use composer and everything is done.
 
 ```sh
-composer require ngekoding/codeigniter-datatables
+composer require danielalmeida1481/codeigniter-datatables
 ```
 
 ## Usage
@@ -34,27 +34,12 @@ $queryBuilder = $this->db->select('p.*, c.name category')
 
 /**
  * The first parameter is the query builder instance
- * and the second is the codeigniter version (3 or 4) 
  */
-$datatables = new Ngekoding\CodeIgniterDataTables\DataTables($queryBuilder, '3');
+$datatables = new Danielalmeida1481\CodeIgniterDataTables\DataTables($queryBuilder);
 $datatables->generate(); // done
 ```
 
-### CodeIgniter 4 Example
-
-```php
-// CodeIgniter 4 Example
-
-$db = db_connect();
-$queryBuilder = $db->from('posts p')
-                   ->select('p.*, c.name category')
-                   ->join('categories c', 'c.id=p.category_id');
-
-$datatables = new Ngekoding\CodeIgniterDataTables\DataTables($queryBuilder, '4');
-$datatables->generate(); // done
-```
-
-**The above examples will give you for [ajax data source (arrays)](https://datatables.net/examples/ajax/simple.html), so you need to make sure the table header you makes for the client side is match with the ajax response. We will talk about the objects data source below.**
+**The above example will give you for [ajax data source (arrays)](https://datatables.net/examples/ajax/simple.html), so you need to make sure the table header you makes for the client side is match with the ajax response. We will talk about the objects data source below.**
 
 ### Client Side Examples
 
@@ -121,24 +106,10 @@ $('#table-post').DataTable({
 
 Some basic functionalities already available, here is the full settings you can doing to this library.
 
-### Use class for spesify the CodeIgniter version
-```php
-// General, use the second param to define the version
-// The default is 4
-$datatables = new Ngekoding\CodeIgniterDataTables\DataTables($queryBuilder, '3');
-
-// CodeIgniter 3
-$datatables = new Ngekoding\CodeIgniterDataTables\DataTablesCodeIgniter3($queryBuilder);
-
-// CodeIgniter 4
-$datatables = new Ngekoding\CodeIgniterDataTables\DataTablesCodeIgniter4($queryBuilder);
-
-```
-
 ### Available Options
 
 ```php
-$datatables = new Ngekoding\CodeIgniterDataTables\DataTables($queryBuilder);
+$datatables = new Danielalmeida1481\CodeIgniterDataTables\DataTables($queryBuilder);
 
 // Return the output as objects instead of arrays
 $datatables->asObject();
@@ -180,17 +151,3 @@ $datatables->addSequenceNumber('rowNumber'); // It will be rowNumber
 // Don't forget ot call generate to get the results
 $datatables->generate();
 ```
-
-## Another Example
-
-I already use this library to the existing project with completed CRUD operations, you can found it [here](https://github.com/ngekoding/ci-crud). 
-
-Please look at these files:
-- application/composer.json
-- application/controllers/Post.php
-- application/models/M_post.php
-- application/views/template.php
-- application/views/posts/index-datatables.php
-- application/views/posts/index-datatables-array.php
-- application/helpers/api_helper.php
-- assets/js/custom.js

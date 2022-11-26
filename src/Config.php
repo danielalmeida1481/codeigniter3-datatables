@@ -24,7 +24,7 @@ class Config
         ]
     ];
 
-    public function __construct($ciVersion = '4')
+    public function __construct($ciVersion = '3')
     {
         $this->ciVersion = $ciVersion;
     }
