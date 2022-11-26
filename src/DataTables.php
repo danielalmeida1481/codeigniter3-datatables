@@ -1,6 +1,6 @@
 <?php
 
-namespace Ngekoding\CodeIgniterDataTables;
+namespace Danielalmeida1481\CodeIgniterDataTables;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;

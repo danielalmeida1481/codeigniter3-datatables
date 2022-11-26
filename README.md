@@ -1,5 +1,4 @@
 # CodeIgniter DataTables
-
 DataTables server-side for CodeIgniter 3.
 
 **Note:** This library only handle the server-side part, you still needs to configure the client side like jQuery, DataTables library and including the styles. Don't worry, we already give the examples below.
@@ -13,7 +12,7 @@ If you are using CodeIgniter, let's go! You don't needs any extra requirements.
 You just need to use composer and everything is done.
 
 ```sh
-composer require danielalmeida1481/codeigniter-datatables
+composer require danielalmeida1481/codeigniter3-datatables
 ```
 
 ## Usage
