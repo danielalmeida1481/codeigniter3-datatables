@@ -1,6 +1,6 @@
 <?php
 
-namespace Danielalmeida1481\CodeIgniterDataTables;
+namespace Danielalmeida1481\CodeIgniter3DataTables;
 
 use PHPSQLParser\PHPSQLParser;
 
